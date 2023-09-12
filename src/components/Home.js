@@ -3,8 +3,8 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import React from 'react';
-//import {orange,teal} from '@mui/material/colors';
-
+import image from "../Image/homeImg.png"
+import Image from "mui-image";
 
 
 export default function Home() {
@@ -16,7 +16,8 @@ export default function Home() {
         pb: 6,
       }}
     >
-      <Container maxWidth="sm">
+      
+      {/* <Container maxWidth="sm">
         <Typography
           component="h1"
           variant="h2"
@@ -25,14 +26,20 @@ export default function Home() {
           //bgcolor={"yellow"}
           gutterBottom
         >
-        
-      
-       {/* <Chart/> */}
-       {/* <Draft/> */}
-          Tiny Url App-
-         here you can shorten URLs
-        </Typography>
-        </Container>
+          */}
+         {/* <Box
+            component="img"
+            sx={{
+            height: 550,
+            alignContent: CenterFocusStrong
+            }}
+            alt="Your logo."
+            src={image}
+        /> */}
+          {/* <CardMedia src={image}></CardMedia> */}
+         <Image src = {image} width={500}></Image>
+        {/* </Typography>
+        </Container> */}
         
         </Box>
     );

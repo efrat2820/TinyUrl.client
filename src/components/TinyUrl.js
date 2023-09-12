@@ -5,14 +5,11 @@ import TextField from '@mui/material/TextField';
 import Service from "../Service"
 import Button from '@mui/material/Button';
 import Link from "@mui/material/Link";
-//import SendIcon from '@mui/icons-material/Send';
 import Container from "@mui/material/Container";
 import {orange,teal} from '@mui/material/colors';
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import AutorenewIcon from '@mui/icons-material/Autorenew';
-// import ControlPointIcon from '@mui/icons-material/ControlPoint';
-// import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import {useNavigate}from 'react-router-dom'
@@ -93,7 +90,6 @@ const c = () =>{
             <InputAdornment position="start">
               <CopyToClipboard text={newUrl}
               onCopy={c}>
-                {/* ()=>setTitle("copied") */}
                 <Tooltip title={title}>
                 <IconButton>
               <span><FileCopyOutlinedIcon sx={{width:22}}/></span>
@@ -105,7 +101,6 @@ const c = () =>{
         }}  
     />  
        
-        {/* {copied ? <span sx={{color: teal[300]}}>Copied.</span> : null} */}
      <Button variant="contained" 
        onClick={post}
        sx={{ mt: 3,ml:4, mb: 2,pl:5 ,pr:5 ,bgcolor: teal[300] }}
@@ -113,23 +108,11 @@ const c = () =>{
         Send
       </Button> 
       <Button variant="contained" 
-       onClick={()=>navigate('/tinyUrlTarget')}
+       onClick={()=>navigate('/Target')}
        sx={{ mt: 3,ml:5, mb: 2,pl:5 ,pr:5 ,bgcolor: teal[300] }}
        >
         add target
-      </Button> 
-    {/* add target
-    <Link href="/tinyUrlTarget" variant="body2" color={teal[300]}>
-   <SpeedDial
-        ariaLabel="SpeedDial basic example"
-        sx={{ position: 'absolute',  }}
-        icon={<SpeedDialIcon />}
-        href="/tinyUrlTarget"
-      >
-      </SpeedDial>
-              </Link> */}
-
-     
+      </Button>    
 
     </Box>
 

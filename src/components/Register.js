@@ -38,13 +38,14 @@ export default function Register() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+        
         }}
       >
         <Avatar sx={{ m: 1, bgcolor: orange[300] }}>
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          הרשמה
+          register
         </Typography>
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
         <TextField
@@ -52,7 +53,7 @@ export default function Register() {
             required
             fullWidth
             id="name"
-            label="שם משמתמש"
+            label="user name"
             name="name"
             autoComplete="name"
             
@@ -67,7 +68,7 @@ export default function Register() {
             required
             fullWidth
             id="email"
-            label="כתובת מייל"
+            label="email address"
             name="email"
             autoComplete="email"
             onChange={(event) => setEmail(event.target.value)}
@@ -77,7 +78,7 @@ export default function Register() {
             required
             fullWidth
             name="password"
-            label="סיסמה"
+            label="password"
             type="password"
             id="password"
             autoComplete="current-password"
@@ -85,7 +86,7 @@ export default function Register() {
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
-            label="זכור אותי"
+            label="remember me"
           />
           <Button
             type="submit"
@@ -93,12 +94,12 @@ export default function Register() {
             variant="contained"
             sx={{ mt: 3, mb: 2 , bgcolor:teal[300]}}
           >
-            הרשמה
+            register
           </Button>
           <Grid container>
             <Grid item>
-              <Link href="/login" variant="body2">
-                {"יש לך כבר חשבון? להתחברות"}
+              <Link href="/login" variant="body2" color={teal[300]}>
+                {"Don't have an account yet? to connect"} 
               </Link>
             </Grid>
           </Grid>

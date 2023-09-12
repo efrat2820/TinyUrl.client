@@ -16,18 +16,17 @@ import Service from "../Service";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from 'react-router'
 import {teal} from '@mui/material/colors';
-import img from "../vector.png"
+import img from "../Image/vector.png"
 
 const color = teal[300]  ;
 
 
 const pages = [
-  // { title: "ציבורי", route: "/public" },
-  // { title: "פרטי", route: "/private" },
  
  { title: "add URL", route: "/link" },
- { title: "add target", route: "/tinyUrlTarget" },
- 
+ { title: "add target", route: "/Target" },
+ { title: "target", route: "/chart" },
+ { title: "about", route: "/about" },
 
 ];
 
@@ -156,17 +155,17 @@ function AppHeader() {
           {loginUser ? (
             <div>
               {console.log('loginUser',loginUser)}
-              {loginUser.name} מחובר | 
+              {loginUser.name} Connected | 
               <Button color="inherit" onClick={()=>{
                 Service.logout();
                 navigate('/')
-              }}>התנתקות</Button>
+              }}>disconnection</Button>
             </div>
           ) : (
             <div>
             <Button color="inherit" onClick={()=>{
                 navigate('/login')
-              }}>התחברות</Button>
+              }}>connection</Button>
             </div>
           )}
         </Toolbar>

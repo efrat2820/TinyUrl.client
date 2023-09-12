@@ -102,5 +102,12 @@ export default {
     let del = await axios.delete("http://localhost:5000/link/"+id);
     console.log('del',del)
     return del;
+  },
+
+  getStatistics: async(uniqueName)=>{
+    let st = await axios.get("http://localhost:5000/statistics/"+uniqueName);
+   console.log("st",st);
+   return st.data;
   }
+
 };

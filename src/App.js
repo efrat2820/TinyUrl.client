@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <CacheProvider value={cacheRtl}>
-        <Layout>
+        <Layout >
           <Routes>
             {AppRoutes.map((route, index) => {
               const { element, ...rest } = route;

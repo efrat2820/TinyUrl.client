@@ -4,7 +4,8 @@ import Login from "./components/Login";
 import TinyUrl from "./components/TinyUrl";
 import TinyUrlTarget from "./components/TinyUrlTarget";
 import Register from './components/Register';
-
+import Chart from './components/chart.js'
+import About from './components/About.js'
 const AppRoutes = [
     {
         index: true,
@@ -31,8 +32,16 @@ const AppRoutes = [
         element: <TinyUrl />
     },
     {
-        path: '/tinyUrlTarget',
+        path: '/Target',
         element: <TinyUrlTarget  />
+    },
+    {
+        path: '/chart',
+        element: <Chart/>
+    },
+    {
+        path: '/about',
+        element: <About/>
     },
 ];
 

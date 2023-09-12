@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Service from "../Service"
 import Button from '@mui/material/Button';
-//import SendIcon from '@mui/icons-material/Send';
 import Container from "@mui/material/Container";
 import {orange,teal} from '@mui/material/colors';
 import Avatar from "@mui/material/Avatar";
@@ -13,11 +12,15 @@ import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import AddIcon from '@mui/icons-material/Add';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
-import AllLinks from "./AllLinks.js"
 import Grid from '@mui/material/Grid';
 import AAllLink from "./AAllLink.js"
 import { async } from 'q';
-
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import FileCopyOutlinedIcon from '@mui/icons-material/FileCopyOutlined';
+import InputAdornment from '@mui/material/InputAdornment';
+import Tooltip from '@mui/material/Tooltip';
+import IconButton from '@mui/material/IconButton';
 export default function TinyUrlTarget() {
 
   const [name, setName] = useState();//מקום פרסום
@@ -25,6 +28,8 @@ export default function TinyUrlTarget() {
   const [uniqueName, setUniqeName] = useState("Name" );//uniqueName
   const [newUrl,setNewUrl] = useState("Your Tiny Url");;//url+target
   const [url,setUrl] = useState("Your Url");//old url
+  const [title,setTitle] = useState("copy");
+
     const post = async()=>{      
       setNewUrl(await Service.postUrl(url,uniqueName))
       console.log('newUrl',newUrl)    
@@ -37,6 +42,11 @@ export default function TinyUrlTarget() {
   }
   const handleClick=async()=>{
     setNewUrl(await Service.addTarget(uniqueName , name ,targetValue));
+  }
+  const c = () =>{
+    setTitle("copied")
+    setTimeout(()=>setTitle("copy"),2000);
+    
   }
 
   return (
@@ -53,7 +63,6 @@ export default function TinyUrlTarget() {
         flex:"column",
         flexDirection: "column",
          alignItems: 'center',
-       // '& > :not(style)': { m: 1 },
         width: 500,
         maxWidth: '100%',
       }}
@@ -70,9 +79,6 @@ export default function TinyUrlTarget() {
         label={url} 
         id="margin-normal" 
         margin="normal" 
-        
-        //helperText="Please enter your unique name "
-        //onChange={(event) => setUrl(event.target.value)}
       />
     
     <TextField 
@@ -80,17 +86,8 @@ export default function TinyUrlTarget() {
         label={uniqueName}
         id="margin-normal" 
         margin="normal" 
-        //value={name}
-        //helperText="Please enter your url "
-        //onChange={(event) => setUniqeName(event.target.value)}
     />
     <br/>
-      {/* <Button variant="contained" 
-       onClick={post}
-       sx={{ mt: 3,ml:17, mb: 2,pl:5 ,pr:5 ,bgcolor: teal[300] }}
-       >
-        target
-      </Button>  */}
       <br/>
 
       <TextField  
@@ -112,7 +109,21 @@ export default function TinyUrlTarget() {
         disabled
         value={newUrl} 
         id="margin-normal" 
-        margin="normal"         
+        margin="normal"  
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="start">
+              <CopyToClipboard text={newUrl}
+              onCopy={c}>
+                <Tooltip title={title}>
+                <IconButton>
+              <span><FileCopyOutlinedIcon sx={{width:22}}/></span>
+              </IconButton>
+              </Tooltip>
+              </CopyToClipboard>   
+            </InputAdornment>
+          ),
+        }}         
     />  
        
        <Button variant="contained" 
@@ -122,15 +133,6 @@ export default function TinyUrlTarget() {
       <SpeedDialIcon  /> add
       </Button> 
 
-    {/* <SpeedDial
-        ariaLabel="SpeedDial basic example"   
-        sx={{ color:orange[300]}}    
-        icon={<SpeedDialIcon  /> 
-        }
-        onClick={handleClick}
-      >
-      </SpeedDial> */}
-
     </Box>
     
     
@@ -138,7 +140,6 @@ export default function TinyUrlTarget() {
     
     </Grid>
     <Grid tem xs={5}>
-    {/* <AllLinks  ch={change} />  */}
     <AAllLink ch={change}/>
     </Grid>
     </Grid>
