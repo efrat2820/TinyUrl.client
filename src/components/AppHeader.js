@@ -25,7 +25,7 @@ const pages = [
  
  { title: "add URL", route: "/link" },
  { title: "add target", route: "/Target" },
- { title: "target", route: "/chart" },
+ //{ title: "target", route: "/chart" },
  { title: "about", route: "/about" },
 
 ];

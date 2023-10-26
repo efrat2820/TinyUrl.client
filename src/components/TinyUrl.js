@@ -4,17 +4,13 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Service from "../Service"
 import Button from '@mui/material/Button';
-import Link from "@mui/material/Link";
 import Container from "@mui/material/Container";
 import {orange,teal} from '@mui/material/colors';
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import AutorenewIcon from '@mui/icons-material/Autorenew';
-import SpeedDial from '@mui/material/SpeedDial';
-import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import {useNavigate}from 'react-router-dom'
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import FileCopyOutlinedIcon from '@mui/icons-material/FileCopyOutlined';
 import InputAdornment from '@mui/material/InputAdornment';
 import Tooltip from '@mui/material/Tooltip';

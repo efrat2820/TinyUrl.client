@@ -8,19 +8,16 @@ import Container from "@mui/material/Container";
 import {orange,teal} from '@mui/material/colors';
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
-import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
-import AddIcon from '@mui/icons-material/Add';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 import Grid from '@mui/material/Grid';
-import AAllLink from "./AAllLink.js"
-import { async } from 'q';
+import AllLinks from "./AllLink.js"
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import FileCopyOutlinedIcon from '@mui/icons-material/FileCopyOutlined';
 import InputAdornment from '@mui/material/InputAdornment';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
+
 export default function TinyUrlTarget() {
 
   const [name, setName] = useState();//מקום פרסום
@@ -140,7 +137,7 @@ export default function TinyUrlTarget() {
     
     </Grid>
     <Grid tem xs={5}>
-    <AAllLink ch={change}/>
+    <AllLinks ch={change}/>
     </Grid>
     </Grid>
     

@@ -11,7 +11,7 @@ export default function Chart(){
     
   useEffect(()=>{
       async function func(){
-          const data = await Service.getStatistics("sdfghjk");
+          const data = await Service.getStatistics("r");
           console.log("d",data[0].cnt);
           set(data[0].cnt);
           console.log('stt',dataa);

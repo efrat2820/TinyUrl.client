@@ -105,9 +105,11 @@ export default {
   },
 
   getStatistics: async(uniqueName)=>{
-    let st = await axios.get("http://localhost:5000/statistics/"+uniqueName);
-   console.log("st",st);
-   return st.data;
+    //let st = await axios.get("http://localhost:5000/statistics/"+uniqueName);
+   //console.log("st",st);
+   //return st.data;
+
+   console.log("statistics");
   }
 
 };

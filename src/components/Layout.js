@@ -4,9 +4,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import img from "../Image/back.png"
-import { bgcolor } from "@mui/system";
-import {orange,teal} from '@mui/material/colors';
 
 
 function Copyright() {
